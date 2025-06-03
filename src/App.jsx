@@ -1,12 +1,13 @@
 import './styles/global.scss'
 import './App.scss'
+import Header from './components/Header'
 
 function App() {
 
   return (
-    <>
-     <h1>KingsBet</h1>
-    </>
+    <div className="conteiner">
+      <Header />
+    </div>
   )
 }
 
