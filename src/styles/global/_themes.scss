@@ -1,0 +1,70 @@
+// Variáveis para tema claro
+$background-color: #f9f9f9;            // Cor de fundo principal
+$text-color: #333333;                   // Cor do texto padrão
+$primary-color: #0066ff;                // Cor principal para botões e destaques
+$success-color: #4caf50;                // Cor para ações de sucesso
+$danger-color: #ff4d4f;                 // Cor para ações de erro/perigo
+$font-family-base: 'Inter', sans-serif; // Fonte base
+$font-size-base: 16px;                  // Tamanho de fonte padrão
+$heading-color: #111111;                // Cor de títulos
+
+// Variáveis para tema escuro (Dark Mode)
+$background-color-dark: #1a1a1a;
+$text-color-dark: #e0e0e0;
+$primary-color-dark: #3399ff;
+$success-color-dark: #66bb6a;
+$danger-color-dark: #ef5350;
+$heading-color-dark: #f0f0f0;
+
+
+// Aplicando temas com mixins ou placeholders, se desejar
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+}
+
+// Para modo escuro, você pode usar atributos ou classes
+[data-theme='dark'] {
+  body {
+    background-color: $background-color-dark;
+    color: $text-color-dark;
+  }
+}
+
+// Estilos globais usando variáveis
+h1, h2, h3, h4, h5, h6 {
+  color: $heading-color;
+}
+
+// Estilos de botões
+.btn-primary {
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  color: #fff;
+}
+
+[data-theme='dark'] .btn-primary {
+  background-color: $primary-color-dark;
+  border-color: $primary-color-dark;
+}
+
+/* Similar para success e danger */
+.btn-success {
+  background-color: $success-color;
+  border: 1px solid $success-color;
+}
+[data-theme='dark'] .btn-success {
+  background-color: $success-color-dark;
+  border-color: $success-color-dark;
+}
+
+.btn-danger {
+  background-color: $danger-color;
+  border: 1px solid $danger-color;
+}
+[data-theme='dark'] .btn-danger {
+  background-color: $danger-color-dark;
+  border-color: $danger-color-dark;
+}
