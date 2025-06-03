@@ -4,8 +4,8 @@
 @import 'global/themes';
 
 body {
-  font-family: $font-base;
-  background-color: $bg;
-  color: $text;
+  font-family: $font-family-base;
+  background-color: $background-color;
+  color: $text-color;
   transition: all 0.3s ease;
 }
