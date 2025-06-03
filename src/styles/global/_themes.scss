@@ -1,13 +1,13 @@
 // Variáveis para tema claro
-$background-color: #1a1a1a;            // Cor de fundo principal
-$titulo-color: #edeffa;                   // Cor do texto padrão
-$text-color: #d6dbf5;                   // Cor do texto padrão
-$primary-color: #3399ff;                // Cor principal para botões e destaques
-$success-color: #66bb6a;                // Cor para ações de sucesso
-$danger-color: #ef5350;                 // Cor para ações de erro/perigo
+$background-color: #1a1a1a; // Cor de fundo principal
+$titulo-color: #edeffa; // Cor do texto padrão
+$text-color: #d6dbf5; // Cor do texto padrão
+$primary-color: #3399ff; // Cor principal para botões e destaques
+$success-color: #66bb6a; // Cor para ações de sucesso
+$danger-color: #ef5350; // Cor para ações de erro/perigo
 $font-family-base: 'Inter', sans-serif; // Fonte base
-$font-size-base: 16px;                  // Tamanho de fonte padrão
-$heading-color: #f0eff5;                // Cor de títulos
+$font-size-base: 16px; // Tamanho de fonte padrão
+$heading-color: #f0eff5; // Cor de títulos
 
 // Variáveis para tema escuro (Dark Mode)
 $background-color-dark: #1a1a1a;
@@ -35,15 +35,31 @@ body {
 }
 
 // Estilos globais usando variáveis
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $heading-color;
 }
 
 // Estilos de botões
-.btn-primary {
+.btnPrimary {
   background-color: $primary-color;
   border: 1px solid $primary-color;
   color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: $font-size-base;
+
+  &:hover {
+    background-color: #66bb6a;
+    color: $background-color;
+    border: 1px solid $background-color;
+    
+  }
 }
 
 [data-theme='dark'] .btn-primary {
@@ -56,6 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $success-color;
   border: 1px solid $success-color;
 }
+
 [data-theme='dark'] .btn-success {
   background-color: $success-color-dark;
   border-color: $success-color-dark;
@@ -65,6 +82,7 @@ h1, h2, h3, h4, h5, h6 {
   background-color: $danger-color;
   border: 1px solid $danger-color;
 }
+
 [data-theme='dark'] .btn-danger {
   background-color: $danger-color-dark;
   border-color: $danger-color-dark;
