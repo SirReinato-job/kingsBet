@@ -2,11 +2,14 @@ import { useForm } from "react-hook-form";
 import styles from "./ControleValores.module.scss";
 import { useBet } from "../../context/BetContext";
 export default function ControleValores() {
-    const {setSaldoInicial, setSaldoAtual, setValorGiro} = useBet();
-    
-    const { register, handleSubmit } = useForm();
+    const { setSaldoInicial, setSaldoAtual, setValorGiro } = useBet();
+
+    const { register, handleSubmit, reset } = useForm();
     // Atualiza o estado do BetContext com os valores do formulário
-    const onSubmit = data => setSaldoInicial(Number(data.capitalInicial)) || setSaldoAtual(Number(data.capitalInicial)) || setValorGiro(Number(data.valorGiro));
+    const onSubmit = data => {
+        setSaldoInicial(Number(data.capitalInicial)) || setSaldoAtual(Number(data.capitalInicial)) || setValorGiro(Number(data.valorGiro));
+        reset();
+    };
 
     return (
         <form className={styles.formConteiner} onSubmit={handleSubmit(onSubmit)}>

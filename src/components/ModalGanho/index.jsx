@@ -4,10 +4,13 @@ import { useForm } from "react-hook-form";
 import { useBet } from '../../context/BetContext';
 
 export default function ModalGanho({ isOpen, onClose }) {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const { registrarGanho } = useBet();
 
-    const onSubmit = data => registrarGanho(Number(data.valorGanho));
+    const onSubmit = data => {
+        registrarGanho(Number(data.valorGanho));
+        reset(); 
+    };
 
     return (
         <Modal

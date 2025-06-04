@@ -9,7 +9,7 @@ export default function PainelBet() {
 
 
     // Obtém os valores do contexto BetContext
-    const { saldoInicial, saldoAtual, setSaldoAtual, valorGiro } = useBet();
+    const { saldoInicial, saldoAtual, setSaldoAtual, valorGiro, resetarDados, registrarGiro } = useBet();
 
     function openModal() {
         setModalIsOpen(true);
@@ -17,6 +17,15 @@ export default function PainelBet() {
 
     function closeModal() {
         setModalIsOpen(false);
+    }
+
+    // Função para registrar um giro apenas se tiver um valor
+    function registrarSeuGiro() {
+        if (saldoAtual >= valorGiro && valorGiro > 0) {
+            registrarGiro(saldoAtual);
+        } else {
+            alert('Saldo insuficiente, por favor, acrescente um valor primeiro.');
+        }
     }
 
 
@@ -42,8 +51,10 @@ export default function PainelBet() {
 
 
             <div className={styles.painelBtnConteiner}>
-                <button onClick={() => setSaldoAtual(saldoAtual - valorGiro)} className={styles.btnApostar}>Apostar</button>
-                <button onClick={() => setSaldoAtual(saldoInicial)} className={styles.btnReiniciar}>Reiniciar</button>
+
+                <button onClick={() => registrarSeuGiro()} className={styles.btnApostar}>Apostar</button>
+
+                <button onClick={() => resetarDados()} className={styles.btnReiniciar}>Reiniciar</button>
 
                 <button onClick={openModal} className={styles.btnGanho}>Green</button>
             </div>
