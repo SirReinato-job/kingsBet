@@ -1,0 +1,70 @@
+@import '../../styles/global/themes';
+
+
+.modalConteiner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .tituloModal {
+        color: $titulo-color;
+        font-size: $font-size-titulo;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .formGanhoConteiner {
+        display: flex;
+        flex-direction: column;
+
+        .labelGanho {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .inputGanho {
+            padding: 0.75rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: $font-family-base;
+            font-size: $font-size-base;
+            transition: border-color 0.3s;
+
+            &:focus {
+                outline: none;
+                border-color: $primary-color;
+            }
+        }
+    }
+
+    .btnCloseModal {
+
+        margin-top: 1.5rem;
+        background: transparent;
+        border: $danger-color 1px solid;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        color: $danger-color;
+        font-weight: bold;
+        cursor: pointer;
+        align-self: center;
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        transition: color 1s;
+
+        &:hover {
+            background-color: $danger-color;
+            color: $background-color;
+            transition: color 1s;
+            }
+
+    }
+}
