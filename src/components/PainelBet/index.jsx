@@ -47,6 +47,13 @@ export default function PainelBet() {
                     </span>
 
                 </div>
+                <div className={styles.painelBetItem}>
+                    <h3 className={styles.tituloPainelBetItem}>Porcentagem</h3>
+                    <span className={styles.valorPainelBetItem}>
+                        {((saldoAtual - saldoInicial) / saldoInicial * 100).toFixed(2) + '%'}
+                    </span>
+
+                </div>
             </div>
 
 
