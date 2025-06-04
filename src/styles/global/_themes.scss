@@ -1,21 +1,21 @@
-// Variáveis para tema claro
-$background-color: #1a1a1a; // Cor de fundo principal
-$titulo-color: #edeffa; // Cor do texto padrão
-$text-color: #d6dbf5; // Cor do texto padrão
-$primary-color: #3399ff; // Cor principal para botões e destaques
-$success-color: #66bb6a; // Cor para ações de sucesso
-$danger-color: #ef5350; // Cor para ações de erro/perigo
-$font-family-base: 'Inter', sans-serif; // Fonte base
-$font-size-base: 16px; // Tamanho de fonte padrão
-$heading-color: #f0eff5; // Cor de títulos
+// Cores 
+$background-color: #1a1a1a; 
+$background-color-escuro-claro: #1f2232; 
+$primary-color-dark: #1a1a1a;
+$titulo-color: #edeffa; 
+$heading-color: #f0eff5; 
+$text-color: #d6dbf5; 
+$primary-color: #3399ff; 
+$success-color-dark: #66bb6a; 
+$success-color: #66bb6a; 
+$danger-color: #ef5350; 
+$danger-color-dark: #ef5350; 
 
-// Variáveis para tema escuro (Dark Mode)
-$background-color-dark: #1a1a1a;
-$text-color-dark: #e0e0e0;
-$primary-color-dark: #3399ff;
-$success-color-dark: #66bb6a;
-$danger-color-dark: #ef5350;
-$heading-color-dark: #f0f0f0;
+// Fontes e tamanhos
+$font-family-base: 'Inter', sans-serif; 
+$font-size-titulo: 32px;
+$font-size-subtitulo: 24px;
+$font-size-base: 16px; 
 
 
 // Aplicando temas com mixins ou placeholders, se desejar
@@ -26,13 +26,6 @@ body {
   font-size: $font-size-base;
 }
 
-// Para modo escuro, você pode usar atributos ou classes
-[data-theme='dark'] {
-  body {
-    background-color: $background-color-dark;
-    color: $text-color-dark;
-  }
-}
 
 // Estilos globais usando variáveis
 h1,

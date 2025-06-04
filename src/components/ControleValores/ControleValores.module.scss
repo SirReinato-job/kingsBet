@@ -30,9 +30,9 @@
             background-color: $background-color;
 
             &:focus {
-                border-color: $primary-color-dark;
+                border-color: $background-color;
                 outline: none;
-                box-shadow: 0 0 5px rgba($primary-color-dark, 0.5);
+                box-shadow: 0 0 5px rgba($background-color, 0.5);
             }
         }
 

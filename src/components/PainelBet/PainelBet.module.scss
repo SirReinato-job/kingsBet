@@ -1,0 +1,58 @@
+@import '../../styles/global/themes';
+
+.painelBetConteiner {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 10px 0;
+    gap: 16px;
+    margin: 0 auto;
+
+    .tituloPainel {
+        font-size: 24px;
+        font-weight: 600;
+        color: $heading-color;
+        margin-bottom: 16px;
+    }
+
+    .painelBet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 8px 0;
+        gap: 8px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        .painelBetItem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+            border-radius: 8px;
+            gap: 8px;
+            background-color: $background-color-escuro-claro;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            .tituloPainelBetItem {
+                font-size: 18px;
+                font-weight: 500;
+                color: $text-color;
+                margin-bottom: 8px;
+            }
+
+            .valorPainelBetItem {
+                font-size: 16px;
+                font-weight: 400;
+                color: $text-color;
+            }
+        }
+    }
+
+}
