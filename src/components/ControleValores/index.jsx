@@ -39,8 +39,8 @@ export default function ControleValores() {
                     </select>
                 </Cards>
 
-            </form>
             <input className={styles.btnPrimary} type="submit" />
+            </form>
         </>
     )
 }

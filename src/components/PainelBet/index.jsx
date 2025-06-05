@@ -1,8 +1,9 @@
 import styles from "./PainelBet.module.scss";
 import { useBet } from "../../context/BetContext";
 import ModalGanho from "../ModalGanho";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Cards from "../Cards";
+import useExtMessage from "../../hooks/useExtMessage";
 
 export default function PainelBet() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -35,6 +36,13 @@ export default function PainelBet() {
             );
         }
     }
+
+    useExtMessage((data) => {
+        if (saldoAtual >= valorGiro && valorGiro > 0) {
+            registrarGiro(saldoAtual);
+        }
+    });
+
 
     return (
         <div className={`${styles.container} ${styles.painelBetConteiner} ${styles.flexColumn}`}>
@@ -89,6 +97,7 @@ export default function PainelBet() {
 
             <div className={styles.painelBtnConteiner}>
                 <button
+                    id="registrarGiro"
                     onClick={() => registrarSeuGiro()}
                     className={styles.btnApostar}
                 >

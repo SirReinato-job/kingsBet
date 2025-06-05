@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Canal Bet Messenger",
+  "version": "1.0",
+  "description": "Comunicação entre cps-check e localhost:5173",
+  "permissions": [
+    "scripting",
+    "tabs",
+    "activeTab",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://cps-check.com/*",
+    "http://localhost:5173/*",
+     "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://cps-check.com/pt/keyboard-cps*"],
+
+      "js": ["content.js"]
+    },
+    {
+        "matches": ["http://localhost:5173/*"],
+        "js": ["localhost.js"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/icon.png"
+    }
+  }
+}
