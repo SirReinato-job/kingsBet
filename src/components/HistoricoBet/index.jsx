@@ -6,7 +6,7 @@ export default function HistoricoBet() {
     console.log('historico', historico);
 
     return (
-        <div className={styles.historicoConteiner}>
+        <div className={`${styles.container} ${styles.flexColumn} ${styles.historicoConteiner}`}>
             <h2 className={styles.historicoTitulo}>Histórico</h2>
             <table className={styles.tabelaConteiner}>
                 <thead className={styles.tabelaHeader}>

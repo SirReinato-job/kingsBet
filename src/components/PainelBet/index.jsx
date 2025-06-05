@@ -2,6 +2,7 @@ import styles from "./PainelBet.module.scss";
 import { useBet } from "../../context/BetContext";
 import ModalGanho from "../ModalGanho";
 import { useState } from "react";
+import Cards from "../Cards";
 
 export default function PainelBet() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -36,24 +37,26 @@ export default function PainelBet() {
     }
 
     return (
-        <div className={styles.painelBetConteiner}>
+        <div className={`${styles.container} ${styles.painelBetConteiner} ${styles.flexColumn}`}>
             <h2 className={styles.tituloPainel}>Painel de Controle</h2>
             <div className={styles.painelBet}>
-                <div className={styles.painelBetItem}>
+                <Cards>
                     <h3 className={styles.tituloPainelBetItem}>
                         Valor inicial
                     </h3>
                     <span className={styles.valorPainelBetItem}>
                         {"R$ " + saldoInicial.toFixed(2)}
                     </span>
-                </div>
-                <div className={styles.painelBetItem}>
+                </Cards>
+
+                <Cards>
                     <h3 className={styles.tituloPainelBetItem}>Lucro Total</h3>
                     <span className={styles.valorPainelBetItem}>
                         {"R$ " + saldoAtual.toFixed(2)}
                     </span>
-                </div>
-                <div className={styles.painelBetItem}>
+                </Cards>
+
+                <Cards>
                     <h3 className={styles.tituloPainelBetItem}>Porcentagem</h3>
                     <span className={styles.valorPainelBetItem}>
                         {(
@@ -61,17 +64,19 @@ export default function PainelBet() {
                             100
                         ).toFixed(2) + "%"}
                     </span>
-                </div>
+                </Cards>
             </div>
             <div className={styles.painelBet}>
-                <div className={styles.painelBetItem}>
+
+                <Cards>
                     <h3 className={styles.tituloPainelBetItem}>Valor Gasto</h3>
                     <span className={styles.valorPainelBetItem}>
                         {"R$ " + (historico.length * valorGiro).toFixed(2)}
                     </span>
-                </div>
+                </Cards>
 
-                <div className={styles.painelBetItem}>
+
+                <Cards>
                     <h3 className={styles.tituloPainelBetItem}>Valor Ganho</h3>
                     <span className={styles.valorPainelBetItem}>
                         {historico
@@ -79,7 +84,7 @@ export default function PainelBet() {
                             .reduce((acc, item) => acc + item.valor, 0)
                             .toFixed(2)}
                     </span>
-                </div>
+                </Cards>
             </div>
 
             <div className={styles.painelBtnConteiner}>

@@ -1,13 +1,11 @@
 @import '../../styles/global/themes';
+@import '../../styles/global/layout';
+
 
 .painelBetConteiner {
-    width: 80%;
     display: flex;
-    flex-direction: column;
-    justify-content: start;
-    padding: 10px 0;
     gap: 16px;
-    margin: 0 auto;
+    align-items: start;
 
     .tituloPainel {
         font-size: 24px;
@@ -27,31 +25,18 @@
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-        .painelBetItem {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 20px;
-            border-radius: 8px;
-            gap: 8px;
-            background-color: $background-color-escuro-claro;
 
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .tituloPainelBetItem {
+            font-size: $font-size-subtitulo;
+            font-weight: 500;
+            color: $text-color;
+            margin-bottom: 8px;
+        }
 
-            .tituloPainelBetItem {
-                font-size: 18px;
-                font-weight: 500;
-                color: $text-color;
-                margin-bottom: 8px;
-            }
-
-            .valorPainelBetItem {
-                font-size: 16px;
-                font-weight: 400;
-                color: $text-color;
-            }
+        .valorPainelBetItem {
+            font-size: $font-size-base;
+            font-weight: bold;
+            color: $text-color;
         }
     }
 
@@ -68,9 +53,10 @@
             padding: 12px 16px;
             border-radius: 8px;
             border: none;
-            background-color: $primary-color;
-            color: $background-color-escuro-claro;
+            background-color: $second-color;
+            color: $text-color;
             font-weight: bold;
+            border: 1px solid $text-color;
             font-size: 16px;
             text-align: center;
             cursor: pointer;
@@ -78,17 +64,19 @@
 
             &:hover {
                 background-color: darken($primary-color, 50%);
-                color: $primary-color;
+                color: $text-color;
 
             }
         }
+
         .btnGanho {
             width: 40%;
             padding: 12px 16px;
             border-radius: 8px;
             border: none;
-            background-color: $success-color-dark;
-            color: $background-color-escuro-claro;
+            background-color: $primary-color;
+            color: $text-color;
+            border: 1px solid $text-color;
             font-weight: bold;
             font-size: 16px;
             text-align: center;
@@ -97,16 +85,17 @@
 
             &:hover {
                 background-color: darken($primary-color, 50%);
-                color: $primary-color;
+                color: $text-color;
 
             }
         }
+
         .btnReiniciar {
             width: 20%;
             padding: 12px 16px;
             border-radius: 8px;
             border: 1px solid $text-color;
-            background-color: $primary-color-dark;
+            background-color: $background-secondary;
             color: $text-color;
             font-weight: bold;
             font-size: 16px;
@@ -116,7 +105,7 @@
 
             &:hover {
                 background-color: darken($primary-color, 50%);
-                color: $primary-color;
+                color: $text-color;
 
             }
         }

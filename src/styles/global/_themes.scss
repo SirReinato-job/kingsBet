@@ -1,21 +1,24 @@
-// Cores 
-$background-color: #1a1a1a; 
-$background-color-escuro-claro: #1f2232; 
-$primary-color-dark: #1a1a1a;
-$titulo-color: #edeffa; 
-$heading-color: #f0eff5; 
-$text-color: #d6dbf5; 
-$primary-color: #3399ff; 
-$success-color-dark: #66bb6a; 
-$success-color: #66bb6a; 
-$danger-color: #ef5350; 
-$danger-color-dark: #ef5350; 
+// Cores principais baseadas na sua paleta escura
+$background-color: #13171e;              
+$background-secondary: #101a2e; 
+$text-color: #EEEEEE;               
+$heading-color: #EEEEEE; 
+
+// Cores de destaque
+$primary-color: #006A67;   
+$second-color: #273349;   
+$success-color: #006A67;   
+$error-color: #C0392B;  
+
+// Variações para contraste
+$primary-light: #007D7A;     
+$primary-dark: #004D4A;                  
 
 // Fontes e tamanhos
-$font-family-base: 'Inter', sans-serif; 
+$font-family-base: 'Inter', sans-serif;
 $font-size-titulo: 32px;
 $font-size-subtitulo: 24px;
-$font-size-base: 16px; 
+$font-size-base: 16px;
 
 
 // Aplicando temas com mixins ou placeholders, se desejar
@@ -39,26 +42,22 @@ h6 {
 
 // Estilos de botões
 .btnPrimary {
-  background-color: $primary-color;
-  border: 1px solid $primary-color;
-  color: #fff;
-  padding: 0.5rem 1rem;
+  background-color: $background-secondary;
+
+  border: 1px solid $second-color;
+  color: $text-color;
+  padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
-  font-size: $font-size-base;
+  font-size: $font-size-subtitulo;
 
   &:hover {
-    background-color: #66bb6a;
-    color: $background-color;
-    border: 1px solid $background-color;
-    
+    background-color: $primary-dark;
+    color: $text-color;
+
   }
 }
 
-[data-theme='dark'] .btn-primary {
-  background-color: $primary-color-dark;
-  border-color: $primary-color-dark;
-}
 
 /* Similar para success e danger */
 .btn-success {
@@ -66,17 +65,8 @@ h6 {
   border: 1px solid $success-color;
 }
 
-[data-theme='dark'] .btn-success {
-  background-color: $success-color-dark;
-  border-color: $success-color-dark;
-}
 
 .btn-danger {
-  background-color: $danger-color;
-  border: 1px solid $danger-color;
-}
-
-[data-theme='dark'] .btn-danger {
-  background-color: $danger-color-dark;
-  border-color: $danger-color-dark;
+  background-color: $error-color;
+  border: 1px solid $error-color;
 }
