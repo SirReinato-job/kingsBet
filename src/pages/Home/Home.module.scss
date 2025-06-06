@@ -1,0 +1,10 @@
+@import '../../styles/global/themes';
+@import '../../styles/global/layout';
+
+.containerCassino {
+    width: 100%;
+    height: 100vh;;
+    display: flex;
+    background: url('../../../public/img/bg-home.webp') no-repeat center center;
+    background-size: cover;
+}
