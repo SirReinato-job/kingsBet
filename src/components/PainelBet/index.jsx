@@ -3,6 +3,7 @@ import { useBet } from "../../context/BetContext";
 import ModalGanho from "../ModalGanho";
 import { useState } from "react";
 import Cards from "../Cards";
+import { set } from "react-hook-form";
 
 export default function PainelBet() {
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -11,6 +12,7 @@ export default function PainelBet() {
     const {
         saldoInicial,
         saldoAtual,
+        setSaldoAtual,
         valorGiro,
         resetarDados,
         registrarGiro,
@@ -24,6 +26,14 @@ export default function PainelBet() {
     function closeModal() {
         setModalIsOpen(false);
     }
+
+    const valorApostadoAoGirar = (historico.length * valorGiro);
+
+    const valorGanho = historico
+        .filter((item) => item.tipo === "ganho")
+        .reduce((acc, item) => acc + item.valor, 0);
+
+    
 
     // Função para registrar um giro apenas se tiver um valor
     function registrarSeuGiro() {
@@ -59,7 +69,7 @@ export default function PainelBet() {
                 <Cards>
                     <h3 className={styles.tituloPainelBetItem}>Lucro Total</h3>
                     <span className={styles.valorPainelBetItem}>
-                        {"R$ " + saldoAtual.toFixed(2)}
+                        {"R$ " + (saldoInicial - valorApostadoAoGirar + valorGanho).toFixed(2)}
                     </span>
                 </Cards>
 
@@ -78,18 +88,15 @@ export default function PainelBet() {
                 <Cards>
                     <h3 className={styles.tituloPainelBetItem}>Valor Gasto</h3>
                     <span className={styles.valorPainelBetItem}>
-                        {"R$ " + (historico.length * valorGiro).toFixed(2)}
+                        {"R$ " + valorApostadoAoGirar.toFixed(2)}
                     </span>
                 </Cards>
 
 
                 <Cards>
-                    <h3 className={styles.tituloPainelBetItem}>Valor Ganho</h3>
+                    <h3 className={styles.tituloPainelBetItem}>Valor Real Ganho</h3>
                     <span className={styles.valorPainelBetItem}>
-                        {historico
-                            .filter((item) => item.tipo === "ganho")
-                            .reduce((acc, item) => acc + item.valor, 0)
-                            .toFixed(2)}
+                        { "R$ " + (valorGanho-valorApostadoAoGirar).toFixed(2) }
                     </span>
                 </Cards>
             </div>
